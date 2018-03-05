@@ -5,6 +5,8 @@
     <button v-on:click="onMachinesListClick" type="button" class="btn btn-success"> Consulter la liste des machines</button>
 
     <button v-on:click="onMapClick" type="button" class="btn btn-success"> Voir la carte</button>
+    <liste> </liste>
+    <carte> </carte>
   </div>
 </template>
 
