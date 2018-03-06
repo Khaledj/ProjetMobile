@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="listemachine">
     <h1> Machine {{name}}</h1>
     <h3 :class="{green:status}" v-if="status"> Status OK </h3>
     <h3 :class="{red:!status}" v-else> Status KO </h3>
@@ -11,6 +11,7 @@
 
 <script>
 	export default {
+
   props : ['name', 'status','checkedAt'],
   name: 'machine',
   // data () {
@@ -33,4 +34,17 @@
 .green {
 	color : green;
 }
+
+
+.listemachine{
+       border: 2px solid black;
+
+       margin: auto;
+
+       width: 60%;
+
+       margin-bottom: 15px;
+
+   }
+
 </style>

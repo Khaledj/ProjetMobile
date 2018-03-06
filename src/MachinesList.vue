@@ -1,9 +1,13 @@
 <template>
-	<div >
-
+	<div>
+		<br>
 		<h1>Liste des machines</h1>
-		<machine v-bind:name='machines.name' :status="machines.status" :checkedAt="machines.checkedAt"></machine>
-
+		<br>
+		<machine v-for="machine in machines" 
+		v-bind:name='machine.name' 
+		:status="machine.status" 
+		:checkedAt="machine.checkedAt"></machine>
+    
 	</div>
 </template>
 
@@ -15,15 +19,21 @@ export default {
 	name: 'liste',
 	data () {
 		return {
-			machines: {
+			machines: [{
+				id: 1,
 				name : 'What else?',
 				status : true,
 				checkedAt : new Date().toLocaleString(),
+			}, {
+				id: 2,
+				name: 'Broken',
+				status : false,
+				checkedAt : new Date(),
+			}]
 
-					  }
-				}
-			}
-
+			  }		  
+				
+		   }
 }
 
 
