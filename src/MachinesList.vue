@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div >
       
     <h1>Liste des machines</h1>
 

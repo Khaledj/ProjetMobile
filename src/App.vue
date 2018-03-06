@@ -2,14 +2,18 @@
   <div id="app">
     <img src="http://vuejs.org/images/logo.png">
     <h1>{{ msg }}</h1>
-    <button v-on:click="onMachinesListClick" type="button" class="btn btn-success"> Consulter la liste des machines</button>
+    <router-link to ="/machines"><button v-on:click="onMachinesListClick" type="button" class="btn btn-success" > Consulter la liste des machines</button></router-link>
 
-    <button v-on:click="onMapClick" type="button" class="btn btn-success"> Voir la carte</button>
-    <liste> </liste>
-    <carte> </carte>
+    <router-link to ="/map"> <button  v-on:click="onMapClick" type="button" class="btn btn-success"> Voir la carte</button></router-link>
+    <router-view></router-view>
+    <!-- appelle des composants-->
+   <!--  <liste> </liste>
+    <carte> </carte> -->
+   <router-link to="/machine"> </router-link>
+  
   </div>
 </template>
-
+ 
 <script>
 export default {
   name: 'app',
