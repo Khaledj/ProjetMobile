@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  name: 'app',
-  props :['Carte'],
+  name: 'carte',
+
 }	
 
 </script>
