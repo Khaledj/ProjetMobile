@@ -12,7 +12,7 @@
 <gmap-marker 
 :key="marker.id"
 v-for="marker in markers"
-:position="{lat: marker.latitude, lng: marker.longitude}"
+:position="{lat: Number(marker.latitude), lng: Number(marker.longitude)}"
 >
 </gmap-marker>
 </gmap-map>
@@ -21,24 +21,38 @@ v-for="marker in markers"
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'carte',
   data () {
   	return {
-markers: [{
-				id: 1,
-				latitude : 10,
-				longitude : 10,
+  		markers:[],
+  		loading:true,
+		error:null
+// markers: [{
+// 				id: 1,
+// 				latitude : 10,
+// 				longitude : 10,
 				
-			}, {
-				id: 2,
-				latitude: 11,
-				longitude : 9.6,
+// 			}, {
+// 				id: 2,
+// 				latitude: 11,
+// 				longitude : 9.6,
 				
-			}]
+// 			}]
   	        }
-         }
+         },
+         created() {
+    axios.get(`https://machine-api-campus.herokuapp.com/api/machines`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.markers = response.data
+    })
+    .catch(e => {
+      this.error.push(e)
+    })
+}
+
 
 }	
 
