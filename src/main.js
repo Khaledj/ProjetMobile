@@ -8,6 +8,7 @@ import Liste from './MachinesList.vue'
 import Carte from './MachinesMap.vue'
 import Machine from './Machine.vue'
 
+require('./cle.js')
 Vue.component('liste',Liste)
 Vue.component('carte',Carte )
 Vue.component('machine',Machine)
@@ -16,7 +17,7 @@ Vue.use(VueRouter)
 
 Vue.use(VueGoogleMaps, {
    load : {
-   	key : 'AIzaSyAp4EwV02SaflUNfxgRoqyQ3lQ0dAfGHbc',
+   	key : key_api,
    }
 })
 
